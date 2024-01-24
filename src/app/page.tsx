@@ -1,95 +1,75 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
+import Button from '@mui/material/Button'
+import SelfImprovementIcon from '@mui/icons-material/SelfImprovement'
+import { grey } from '@mui/material/colors'
+import styles from './page.module.scss'
+import { ReadTokenBalance } from '@/components/ReadTokenBalance'
+import { WriteTransfer } from '@/components/WriteTransfer'
+import Link from 'next/link'
+import { SnackbarMessage, VariantType, enqueueSnackbar } from 'notistack'
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+      <h1>
+        Zen Dapp Template
+        <SelfImprovementIcon
+          sx={{ fontSize: 40, color: grey[300] }}
+        ></SelfImprovementIcon>
+      </h1>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section>
+        <Link href="/page1">Page 1</Link>
+        <Link href="/page2">Page 2</Link>
+      </section>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      <section>
+        <w3m-button />
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+      <section>
+        <h2>Mui</h2>
+        <Button variant="contained">Hello world</Button>
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+      <ReadTokenBalance></ReadTokenBalance>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <WriteTransfer></WriteTransfer>
+
+      <Button
+        variant="contained"
+        color="success"
+        onClick={() =>
+          enqueueSnackbar('ok', {
+            variant: 'success',
+          })
+        }
+      >
+        Success Notify
+      </Button>
+
+      <Button
+        variant="contained"
+        color="error"
+        onClick={() =>
+          enqueueSnackbar('failed', {
+            variant: 'error',
+          })
+        }
+      >
+        Error Notify
+      </Button>
+      <Button
+        variant="contained"
+        color="info"
+        onClick={() =>
+          enqueueSnackbar('This is custom component', {
+            variant: 'info',
+          })
+        }
+      >
+        Error Notify
+      </Button>
     </main>
-  );
+  )
 }
