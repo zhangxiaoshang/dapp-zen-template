@@ -2,6 +2,7 @@ import { AppNotistack } from '@/context/Notistack'
 import { Web3Modal } from '@/context/Web3Modal'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Suspense } from 'react'
 import './globals.css'
 
 import '@fontsource/roboto/300.css'
@@ -26,7 +27,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <AppNotistack></AppNotistack>
 
-        <Web3Modal>{children}</Web3Modal>
+        <Web3Modal>
+          <Suspense>{children}</Suspense>
+        </Web3Modal>
       </body>
     </html>
   )
