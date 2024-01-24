@@ -30,4 +30,4 @@ bun dev
 ## CI
 
 - [x] Git Hooks
-- [x] VS Code config
+- [ ] VS Code config
