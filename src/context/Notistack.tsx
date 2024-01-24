@@ -1,7 +1,6 @@
 'use client'
+import { Custom, Error, Success } from '@/components/notistack'
 import { SnackbarProvider } from 'notistack'
-import { Success, Error } from '@/components/notistack/Notistack'
-import Info from '@/components/notistack/Info'
 
 export function AppNotistack() {
   return (
@@ -13,7 +12,7 @@ export function AppNotistack() {
       Components={{
         success: Success,
         error: Error,
-        info: Info,
+        info: Custom,
       }}
     />
   )

@@ -1,12 +1,12 @@
 'use client'
-import Button from '@mui/material/Button'
-import SelfImprovementIcon from '@mui/icons-material/SelfImprovement'
-import { grey } from '@mui/material/colors'
-import styles from './page.module.scss'
 import { ReadTokenBalance } from '@/components/ReadTokenBalance'
 import { WriteTransfer } from '@/components/WriteTransfer'
+import SelfImprovementIcon from '@mui/icons-material/SelfImprovement'
+import Button from '@mui/material/Button'
+import { grey } from '@mui/material/colors'
 import Link from 'next/link'
-import { SnackbarMessage, VariantType, enqueueSnackbar } from 'notistack'
+import { enqueueSnackbar } from 'notistack'
+import styles from './page.module.scss'
 
 export default function Home() {
   return (
@@ -68,7 +68,7 @@ export default function Home() {
           })
         }
       >
-        Error Notify
+        Custom Notify
       </Button>
     </main>
   )
