@@ -32,3 +32,6 @@ bun dev
 - [x] Git Hooks
 - [x] VS Code config
 - [x] Storybook
+- [ ] generate component script
+- [ ] generate page script
+- [ ] vitest
