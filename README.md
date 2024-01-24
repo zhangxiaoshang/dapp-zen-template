@@ -30,4 +30,5 @@ bun dev
 ## CI
 
 - [x] Git Hooks
-- [ ] VS Code config
+- [x] VS Code config
+- [x] Storybook
