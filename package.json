@@ -6,6 +6,8 @@
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
     "generate:wagmi": "pnpm wagmi generate",
+    "generate:component": "bash scripts/generate-component.sh",
+    "gc": "pnpm generate:component",
     "dev": "pnpm generate:wagmi && next dev",
     "build": "pnpm generate:wagmi && next build",
     "start": "next start",

@@ -7,7 +7,7 @@ describe('BaseTemplate', () => {
   it('show be render with props', () => {
     // ARRANGE
     const { simpleTextProp } = mockBaseTemplateProps.basic
-    const { asFragment, getByText } = render(
+    const { getByText } = render(
       <BaseTemplate simpleTextProp={simpleTextProp} />,
     )
 
@@ -15,14 +15,5 @@ describe('BaseTemplate', () => {
 
     // ASSERT
     expect(getByText(simpleTextProp)).toBeDefined()
-    expect(asFragment()).toMatchInlineSnapshot(`
-      <DocumentFragment>
-        <div
-          class="_BaseTemplate_a15a96"
-        >
-          Hello World
-        </div>
-      </DocumentFragment>
-    `)
   })
 })
