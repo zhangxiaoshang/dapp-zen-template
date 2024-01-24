@@ -14,6 +14,8 @@ pnpm dev
 bun dev
 ```
 
+## Feature
+
 - [x] .prettierrc
 - [x] scss
 - [x] Mui
@@ -24,3 +26,8 @@ bun dev
 - [x] .env
 - [x] nprogress
 - [x] notistack
+
+## CI
+
+- [x] Git Hooks
+- [x] VS Code config

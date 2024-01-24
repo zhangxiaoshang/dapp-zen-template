@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prepare": "pnpm wagmi generate",
-    "dev": "pnpm prepare && next dev",
-    "build": "pnpm prepare && next build",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install",
+    "generate:wagmi": "pnpm wagmi generate",
+    "dev": "pnpm generate:wagmi && next dev",
+    "build": "pnpm generate:wagmi && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -26,6 +28,8 @@
     "wagmi": "^2.5.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.5.0",
+    "@commitlint/config-conventional": "^18.5.0",
     "@types/node": "^20",
     "@types/nprogress": "^0.2.3",
     "@types/react": "^18",
@@ -34,6 +38,7 @@
     "encoding": "^0.1.13",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
+    "husky": "^8.0.3",
     "pino-pretty": "^10.3.1",
     "sass": "^1.70.0",
     "typescript": "^5"
